@@ -1,0 +1,24 @@
+#alpha version 
+version: '3.8'
+
+services:
+    web:
+        image: web
+        deploy:
+            labels:
+            - web.websiteproject-wp.name: "Website Project (WP)"
+        build: .
+        ports:
+            - "8000:80"
+    volumes:
+        - website_project_wp:/var/log
+#    
+#   Pending
+#   expiremental
+#    
+    
+volumes:
+    website_project_wp: {}
+
+#networks:
+#    overlay:
